@@ -1,10 +1,9 @@
-<?php
-	session_start();
-	require_once("connection.php");
-	
+<?php	
+	//require connection.php before verifying! and should start session first!
 	$url="login.php";
 	$js="<script language='javascript' type='text/javascript'>alert('Login First!');window.location.href='$url';</script>";
 	if(!isset($_SESSION['username']) || !isset($_SESSION['password'])){
+		oci_close($conn);
 		echo $js;
 	}
 
@@ -16,7 +15,7 @@
 	oci_fetch_all($stmt,$res);
 	$c=count($res["USER_NAME"]);
 	if($c<=0){
+		oci_close($conn);
 		echo $js;
 	}
-	oci_close($conn);
 ?>
