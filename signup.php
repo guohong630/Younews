@@ -15,10 +15,15 @@ require_once "connection.php";
       $username = $_POST['username'];
       $password1 = $_POST['password1'];
       $password2 = $_POST['password2'];
+      $address = $_POST['address'];
+      $job = $_POST['job'];
+      $dob = $_POST['dob'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
     
       if (!empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2)) {    
               //insert the data into database
-              $query1 = "INSERT INTO USERS (USER_NAME, PASSWORD) VALUES ('$username', '$password1')" ;
+              $query1 = "INSERT INTO USERS (USER_NAME, ADDRESS, PASSWORD,  JOB, DOB, EMAIL, PHONE) VALUES ('$username', '$address', '$password1', '$job', '$dob', '$email', '$phone')";
               $stid1 = oci_parse($conn, $query1);
               oci_execute($stid1);
               oci_commit($conn);
@@ -49,6 +54,16 @@ require_once "connection.php";
       <input type="password" id="password1" name="password1" /><br />
       <label for="password2">Password (retype):</label>
       <input type="password" id="password2" name="password2" /><br />
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" /><br />
+      <label for="job">Job:</label>
+      <input type="text" id="job" name="job" /><br />
+      <label for="dob">Date of Birth:</label>
+      <input type="test" id="dob" name="dob" /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br />
+      <label for="phone">Phone Number</label>
+      <input type="number" id="phone" name="phone" /><br />
     </fieldset>
     <input type="submit" value="Sign Up" name="submit" />
   </form>
