@@ -5,7 +5,7 @@
 	require_once("connection.php");
 	require_once("verify.php");
 	$stockid = $_GET['stockid'];
-	echo "This page gets stockid=$stockid and need to print stock data in this page";
+	$stockname=$_GET['stockname'];
 
 	$sql="select price, date_to_unix_ts(stock_date) as ST from has_stock_data where stock_id=$stockid";
 	$stm=oci_parse($conn,$sql);
@@ -24,7 +24,6 @@
 ?>
 
 <html>
-<h1>H</h1?
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Highstock Example</title>
@@ -46,11 +45,11 @@ $(function () {
             },
 
             title : {
-                text : 'AAPL Stock Price'
+                text : "<?php echo $stockname ?>"+" Stock Price"
             },
 
             series : [{
-                name : 'AAPL',
+                name : "<?php echo $stockname ?>",
                 data : jQuery.parseJSON("<?php echo $dataJ ?>"),
                 tooltip: {
                     valueDecimals: 2

@@ -14,8 +14,9 @@
 	oci_execute($sql,OCI_DEFAULT);
 	while($row=oci_fetch_row($sql)){
 		$stockid=$row[0];
+		$com=$row[2];
 		$disp = $row[2] ." (". $row[1].")";
-		echo "<a href=\"stock_data.php?stockid=$stockid\">$disp</a><br>";
+		echo "<a href=\"stock_data.php?stockid=$stockid&stockname=$com\">$disp</a><br>";
 	}
 	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a><br>";
 
