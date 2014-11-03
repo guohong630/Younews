@@ -4,7 +4,7 @@
 	require_once('verify.php');//require connection.php before verifying! and should start session first!
 	$user=$_SESSION['username'];
 	$passwd=$_SESSION['password'];
-	print "Welcom! $user!<br>";
+	echo  "<p class = 'text'>Welcome! $user!</p><br>";
 	$sql_user = oci_parse($conn, "select user_id from users where user_name='$user'");
 	oci_execute($sql_user,OCI_DEFAULT);
 	oci_fetch_all($sql_user,$res);
@@ -17,8 +17,10 @@
 		$disp = $row[2] ." (". $row[1].")";
 		echo "<a href=\"stock_data.php?stockid=$stockid\">$disp</a><br>";
 	}
-	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a>";
-        
+	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a><br>";
+
+
+        echo "<a href=\"logout.php\">Logout</a>";
 	
        
         
