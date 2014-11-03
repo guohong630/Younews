@@ -7,7 +7,7 @@
 	$stockid = $_GET['stockid'];
 	$stockname=$_GET['stockname'];
 
-	$sql="select price, date_to_unix_ts(stock_date) as ST from has_stock_data where stock_id=$stockid";
+	$sql="select price, date_to_unix_ts(stock_date) as ST from has_stock_data where stock_id=$stockid order by stock_date";
 	$stm=oci_parse($conn,$sql);
 	oci_execute($stm,OCI_DEFAULT);
 	oci_fetch_all($stm,$res);
