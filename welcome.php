@@ -17,5 +17,19 @@
 		$disp = $row[2] ." (". $row[1].")";
 		echo "<a href=\"stock_data.php?stockid=$stockid\">$disp</a><br>";
 	}
-	oci_close($conn);
+	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a>";
+        
+	
+       
+        
+
+
+oci_close($conn);	
+
 ?>
+
+
+
+
+
+
