@@ -21,4 +21,7 @@
 <h4><?php echo "Keywords: $kw"?></h4>
 <h5><?php echo "Date: $date"?></h5>
 <br>
-<?php echo $txt?>
+<?php echo $txt
+?>
+
+<h3>Click <a href="welcome.php">here</a> to go back.</h3>
