@@ -14,7 +14,7 @@
 		oci_execute($stid);
 		$numrows = oci_fetch_all($stid, $res);
                 if ($numrows==0) {
-	           echo "The stock have successfully added to your interest list!";
+	           echo 'The stock have successfully added to your interest list! Click <a href="welcome.php">here</a> to go back.';
 	           $query = "INSERT INTO SELECT_STOCK (USER_ID, STOCK_ID) VALUES ($userid, $stock_id)";
 	           $stid1 = oci_parse($conn, $query);
                      oci_execute($stid1);
@@ -23,7 +23,7 @@
 		     exit();
 		}
 		else {
-			echo '<p class="error">You already selected this stock before!</p>';
+			echo '<p class="error">You already selected this stock before! Click <a href="welcome.php">here</a> to go back.</p>';
 			exit();
 		}
 	    }
