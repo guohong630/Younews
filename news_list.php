@@ -14,3 +14,5 @@
 	}
 	oci_close($conn);
 ?>
+
+<h3>Click <a href="welcome.php">here</a> to go back.</h3>
