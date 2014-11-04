@@ -19,7 +19,7 @@
 		echo "<a href=\"stock_data.php?stockid=$stockid&stockname=$com\">$disp</a><br>";
 	}
 	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a><br>";
-
+        echo "<a href=\"preference.php?userid=$userid\">Change your pushing preference</a><br>";
 
         echo "<a href=\"logout.php\">Logout</a>";
 	
