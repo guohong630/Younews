@@ -23,14 +23,18 @@
 		     exit();
 		}
 		else {
-			echo "You already selected this stock before!";
+			echo '<p class="error">You already selected this stock before!</p>';
 			exit();
 		}
 	    }
 	} 
 
 print <<<_HTML_
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>	
 
 	<h3>Please select the stocks that you are interested in (use 'Ctrl' for multiple choice)</h3>
 

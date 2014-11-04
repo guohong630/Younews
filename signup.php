@@ -29,13 +29,13 @@ require_once "connection.php";
               oci_commit($conn);
 	    
               //Comfirm success with the user
-              echo '<p> Your new account has been successfully created. You\'re now ready to <a href="login.php">log in</a>.</p>>';
+              echo '<p class="text"> Your new account has been successfully created. You\'re now ready to <a href="login.php">log in</a>.</p>>';
 
               oci_close($conn);
 	      exit();
       }
       else {
-      echo '<p>You must enter all of the sign-up data, including the desired password twice.</p>';
+      echo '<p class="error">You must enter all of the sign-up data, including the desired password twice.</p>';
       }
    }
 
