@@ -1,3 +1,5 @@
+<h3> Stock Media Platform </h3>
+<h4> Location: <a href="welcome.php">Welcome</a> > Select Stock <h4>
 
 
 <?php

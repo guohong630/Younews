@@ -4,7 +4,9 @@
   <title>Sign Up</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<h3> Stock Media Platform </h3>
 <body>
+
   <h3>Sign Up</h3>
 
 <?php 
@@ -46,7 +48,8 @@ require_once "connection.php";
 
 <p>Please enter your username and desired password to sign up to our application.</p>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <fieldset>
+    <fieldset>
+
       <legend>Registration Info</legend>
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" value="<?php if (!empty($username)) echo $username; ?>" /><br />

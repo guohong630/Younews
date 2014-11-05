@@ -60,6 +60,8 @@ $(function () {
 
 		</script>
 	</head>
+	<h3> Stock Media Platform </h3>
+	<h4> Location: <a href="welcome.php">Welcome</a> > <?php echo $stockname ?> Stock Data <h4>
 	<body>
 <script src="./js/highstock.js"></script>
 <script src="./js/modules/exporting.js"></script>

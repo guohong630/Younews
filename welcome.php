@@ -1,10 +1,11 @@
+<h3> Stock Media Platform </h3>
 <?php
 	session_start();
 	require_once('connection.php');
 	require_once('verify.php');//require connection.php before verifying! and should start session first!
 	$user=$_SESSION['username'];
 	$passwd=$_SESSION['password'];
-	echo  "<p class = 'text'>Welcome! $user!</p><br>";
+	echo  "<p class = 'text'>Welcome! $user! (<a href=\"logout.php\">Logout</a>)</p><br>";
 	$sql_user = oci_parse($conn, "select user_id from users where user_name='$user'");
 	oci_execute($sql_user,OCI_DEFAULT);
 	oci_fetch_all($sql_user,$res);
@@ -21,7 +22,7 @@
 	echo "<a href=\"select_stock.php?userid=$userid\">Select stocks</a><br>";
         echo "<a href=\"preference.php?userid=$userid\">Change your pushing preference</a><br>";
 
-        echo "<a href=\"logout.php\">Logout</a>";
+        //echo "<a href=\"logout.php\">Logout</a>";
 	
        
         

@@ -1,3 +1,5 @@
+<h3> Stock Media Platform </h3>
+<h4> Location: <a href="welcome.php">Welcome</a> > Personal News <h4>
 <?php
 	session_start();
 	require_once("connection.php");
@@ -10,7 +12,7 @@
 		$newsid=$row[0];
 		$disp=$row[1];
 		$kw=$row[2];
-		echo "<a href=\"news.php?newsid=$newsid\">$disp</a><br>(Keywords:$kw)<br>";
+		echo "<a href=\"news.php?newsid=$newsid&userid=$userid\">$disp</a><br>(Keywords:$kw)<br>";
 	}
 	oci_close($conn);
 ?>

@@ -1,4 +1,5 @@
-
+<h3> Stock Media Platform </h3>
+<h4> Location: <a href="welcome.php">Welcome</a> > Preference <h4>
 <?php 
 
         session_start();

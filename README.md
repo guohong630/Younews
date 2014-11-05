@@ -2,6 +2,9 @@ db
 ==
 
 TODO:
+ 1. Muti-selection has bug!
+ 2. un-select stock
+ 3. decorate pages
 
 [done]Select stock at welcome.php
 
@@ -9,5 +12,4 @@ TODO:
 
 [done] Display stock data at stock_data.php
 
-1. add return button to every pages
-2. decorate pages.
+[done] add return button to every pages

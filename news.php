@@ -1,8 +1,10 @@
+<h3> Stock Media Platform </h3>
 <?php
 	session_start();
 	require_once("connection.php");
 	require_once("verify.php");
 	$newsid=$_GET['newsid'];
+	$userid=$_GET['userid'];
 	$sql="select * from news where news_id=$newsid";
 	$stm=oci_parse($conn,$sql);
 	oci_execute($stm,OCI_DEFAULT);
@@ -15,7 +17,7 @@
 	$url=$res['URL'][0];
 	oci_close($conn);
 ?>
-
+<h4> Location: <a href="welcome.php">Welcome</a> > <a href="news_list.php?userid=<?php echo $userid ?>">Personal News</a> > <?php echo $topic ?> <h4>
 <h2><?php echo $topic?></h2>
 <h4>  <?php echo "Source: <a href=$url>$source</a>"?></h4>
 <h4><?php echo "Keywords: $kw"?></h4>
@@ -24,4 +26,4 @@
 <?php echo $txt
 ?>
 
-<h3>Click <a href="welcome.php">here</a> to go back.</h3>
+<h3>Click <a href="news_list.php?userid=<?php echo $userid ?>">here</a> to go back.</h3>
