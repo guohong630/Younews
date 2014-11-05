@@ -10,7 +10,7 @@
 	$user=$_SESSION['username'];
 	$passwd=$_SESSION['password'];
 
-	$stmt=oci_parse($conn,"select user_name from users where user_name= '$user' and password='$passwd'");
+	$stmt=oci_parse($conn,"select user_name from users where lower(user_name)= lower('$user') and password='$passwd'");
 	oci_execute($stmt, OCI_DEFAULT);
 	oci_fetch_all($stmt,$res);
 	$c=count($res["USER_NAME"]);
