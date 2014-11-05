@@ -11,24 +11,20 @@
 	if (isset($_POST['submit'])) {
 		foreach ($_POST['stocks'] as $stock_id)
 		{ 
-		$query1 = "SELECT * FROM SELECT_STOCK WHERE USER_ID = $userid AND STOCK_ID = $stock_id";
-                $stid = oci_parse($conn, $query1);
-		oci_execute($stid);
-		$numrows = oci_fetch_all($stid, $res);
-                if ($numrows==0) {
-	           echo 'The stock have successfully added to your interest list! Click <a href="welcome.php">here</a> to go back.';
-	           $query = "INSERT INTO SELECT_STOCK (USER_ID, STOCK_ID) VALUES ($userid, $stock_id)";
-	           $stid1 = oci_parse($conn, $query);
-                     oci_execute($stid1);
-                     oci_commit($conn);
-	             oci_close($conn);
-		     exit();
-		}
-		else {
-			echo '<p class="error">You already selected this stock before! Click <a href="welcome.php">here</a> to go back.</p>';
-			exit();
-		}
+			$query1 = "SELECT * FROM SELECT_STOCK WHERE USER_ID = $userid AND STOCK_ID = $stock_id";
+	        $stid = oci_parse($conn, $query1);
+			oci_execute($stid);
+			$numrows = oci_fetch_all($stid, $res);
+            if ($numrows==0) {
+	           	$query = "INSERT INTO SELECT_STOCK (USER_ID, STOCK_ID) VALUES ($userid, $stock_id)";
+	           	$stid1 = oci_parse($conn, $query);
+		        oci_execute($stid1);
+		        oci_commit($conn);
+			}
 	    }
+	    echo 'The stock have successfully added to your interest list! Click <a href="welcome.php">here</a> to go back.';
+	    oci_close($conn);
+		exit();
 	} 
 
 print <<<_HTML_
@@ -48,10 +44,10 @@ print <<<_HTML_
                                 <option value="3">FB</option>
                                 <option value="4">JNJ</option>
                                 <option value="5">BABA</option>
-				<option value="6">AAPL</option>
-				<option value="7">NVS</option>
-				<option value="8">GS</option>
-				<option value="9">MS</option>
+								<option value="6">AAPL</option>
+								<option value="7">NVS</option>
+								<option value="8">GS</option>
+								<option value="9">MS</option>
                                 <option value="10">GE</option>
                         </select>
                         <input type="submit" name="submit" value=Submit>

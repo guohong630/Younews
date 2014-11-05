@@ -2,7 +2,9 @@
 	text-align: center;
 }
 
-form label {  display: inline-block;  width: 150px;
+form label {
+  display: inline-block;
+  width: 150px;
   font-weight: bold;
 }
 
