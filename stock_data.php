@@ -59,13 +59,34 @@ $(function () {
 });
 
 		</script>
+		<style>
+			#header {
+			    background-color:black;
+			    color:white;
+			    text-align:center;
+			    padding:5px;
+			}
+			#footer {
+			    background-color:black;
+			    color:white;
+			    clear:both;
+			    text-align:center;
+			   padding:5px;	 	 
+			}
+		</style>
 	</head>
-	<h3> Stock Media Platform </h3>
-	<h4> Location: <a href="welcome.php">Welcome</a> > <?php echo $stockname ?> Stock Data <h4>
 	<body>
+		<div id="header">
+		<h1>Stock Media Platform</h1>
+		</div>
+		<h4> Location: <a href="welcome.php">Welcome</a> > <?php echo $stockname ?> Stock Data <h4>
 <script src="./js/highstock.js"></script>
 <script src="./js/modules/exporting.js"></script>
 
 <div id="container" style="height: 400px; min-width: 310px"></div>
+<br><br>
+<div id="footer">
+Copyright @ Siyao Li, Hong Guo
+</div>
 	</body>
 </html>

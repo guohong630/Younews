@@ -18,7 +18,7 @@
 		echo "</script>";  
 	}
 	else{
-		echo "<br>Wrong username/password!<br>";
+		echo "<script language='javascript' type='text/javascript'>alert('Wrong username/password!')</script>;";
 	}
 	oci_close($conn);
 ?>
