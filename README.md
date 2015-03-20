@@ -1,15 +1,5 @@
-db
-==
+Younews: 
 
-TODO:
- 1. Muti-selection has bug!
- 2. un-select stock
- 3. decorate pages (welcome.php, make it more clear)
-
-[done]Select stock at welcome.php
-
-[done] add more info in signup.php
-
-[done] Display stock data at stock_data.php
-
-[done] add return button to every pages
+•	Younews is a financial news web application that recommend personalized financial news based on users’ interest. 
+•	Worked on conceptualizing, designing, and building all the features of the application using PHP, JavaScript and Oracle database server. 
+•	Built the stock data visualization tool which support sophisticated navigation options like a small navigator series, preset date ranges, date picker, scrolling and panning.
